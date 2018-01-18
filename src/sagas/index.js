@@ -22,9 +22,20 @@ function * fetchUser(action) {
   }
 }
 
+function * fetchAlbumsByUserId(action) {
+  try {
+    const { userId } = action.fields;
+    let response = yield call(JSONPlaceholder.getAlbumsByUserId, userId);
+    yield put({ type: ACTION_TYPES.ALBUMS_BY_USER_ID_FETCH_SUCCEEDED, albums: response, userId });
+  } catch (e) {
+    yield put({ type: ACTION_TYPES.ALBUMS_BY_USER_ID_FETCH_FAILED, message: e.message });
+  }
+}
+
 function * rootSaga() {
   yield takeLatest(ACTION_TYPES.USERS_FETCH_REQUESTED, fetchUsers);
   yield takeLatest(ACTION_TYPES.USER_FETCH_REQUESTED, fetchUser);
+  yield takeLatest(ACTION_TYPES.USER_FETCH_REQUESTED, fetchAlbumsByUserId);
 }
 
 export default rootSaga;

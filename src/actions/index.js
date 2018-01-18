@@ -13,3 +13,6 @@ export const getUserById = (userId = 1) => action(ACTION_TYPES.USER_FETCH_REQUES
   userId,
 });
 
+export const getAlbumsByUserId = (userId = 1) => action(ACTION_TYPES.ALBUMS_BY_USER_ID_FETCH_REQUESTED, {
+  userId,
+});

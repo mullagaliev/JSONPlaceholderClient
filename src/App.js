@@ -14,13 +14,6 @@ const styles = require('./App.sass');
 
 class App extends Component {
   componentDidMount() {
-    getAlbumsByUserId(2)
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
     getPhotosByAlbumId(2)
         .then((data) => {
           console.log(data);
