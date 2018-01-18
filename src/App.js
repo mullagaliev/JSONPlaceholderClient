@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import UsersList from './components/UsersList';
+import ContainerUsersList from './containers/UsersList';
 import UserPage from './components/UserPage';
 import AlbumPage from './components/AlbumPage';
 import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import {
-  getUsers,
   getUserById,
   getAlbumsByUserId,
   getPhotosByAlbumId
@@ -16,14 +15,6 @@ const styles = require('./App.sass');
 
 class App extends Component {
   componentDidMount() {
-    // Test api
-    getUsers()
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
     getUserById(2)
         .then((data) => {
           console.log(data);
@@ -60,10 +51,10 @@ class App extends Component {
               return <AlbumPage/>;
             }}/>
             <Route path='/users' component={() => {
-              return <UsersList/>;
+              return <ContainerUsersList/>;
             }}/>
             <Route path='/' component={() => {
-              return <UsersList/>;
+              return <ContainerUsersList/>;
             }}/>
           </Switch>
         </Router>
