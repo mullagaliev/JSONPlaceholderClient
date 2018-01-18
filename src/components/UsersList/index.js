@@ -26,7 +26,7 @@ class UsersList extends Component {
             </Header>
           </Table.Cell>
           <Table.Cell>
-            <a href="#">@Bret</a>
+            <a href="/user/1">@Bret</a>
           </Table.Cell>
           <Table.Cell>
             <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>

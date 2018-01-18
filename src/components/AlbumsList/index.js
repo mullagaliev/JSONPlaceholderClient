@@ -7,7 +7,7 @@ class AlbumsList extends Component {
   render() {
     return (
         <Card.Group itemsPerRow={4}>
-          <Card color='red' as='a' href='#'>
+          <Card color='red' as='a' href='/album/1'>
             <Image src={defaultAlbum} />
             <Card.Header textAlign='center'>Matthew Harris</Card.Header>
           </Card>

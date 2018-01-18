@@ -4,6 +4,7 @@ import UsersList from './components/UsersList';
 import UserPage from './components/UserPage';
 import AlbumPage from './components/AlbumPage';
 import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 const styles = require('./App.sass');
 
@@ -11,20 +12,24 @@ class App extends Component {
   render() {
     console.log(styles);
     return (
-      <div className={styles.App}>
-        <header className={styles.AppHeader}>
-          <img src={logo} className={styles.AppLogo} alt="logo" />
-          <h1 className={styles.AppTitle}>Welcome to React</h1>
-        </header>
-        <p className={styles.AppIntro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          <UsersList/>
-          <UserPage/>
-          <AlbumPage/>
-        </div>
-      </div>
+        <Router basename="/">
+          <Switch>
+            <Route path='/user/:userId' component={({ match })=>{
+              const userId = match.params.userId;
+              return <UserPage/>;
+            }}/>
+            <Route path='/album/:albumId' component={({ match })=>{
+              const albumId = match.params.albumId;
+              return <AlbumPage/>;
+            }}/>
+            <Route path='/users' component={()=>{
+              return <UsersList/>;
+            }}/>
+            <Route path='/' component={()=>{
+              return <UsersList/>;
+            }}/>
+          </Switch>
+        </Router>
     );
   }
 }
