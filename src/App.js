@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import ContainerUsersList from './containers/UsersList';
 import ContainerUserPage from './containers/UserPage';
-import AlbumPage from './components/AlbumPage';
+import ContainerAlbumPage from './containers/AlbumPage';
 import 'semantic-ui-css/semantic.min.css';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import {
-  getAlbumsByUserId,
-  getPhotosByAlbumId
-} from './services/JSONPlaceholder';
-
-const styles = require('./App.sass');
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-  componentDidMount() {
-    getPhotosByAlbumId(2)
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-  }
-
   render() {
     return (
         <Router basename="/">
@@ -33,7 +16,7 @@ class App extends Component {
             }}/>
             <Route path='/album/:albumId' component={({ match }) => {
               const albumId = match.params.albumId;
-              return <AlbumPage/>;
+              return <ContainerAlbumPage albumId={albumId}/>;
             }}/>
             <Route path='/users' component={() => {
               return <ContainerUsersList/>;

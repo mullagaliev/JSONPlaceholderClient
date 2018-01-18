@@ -32,10 +32,21 @@ function * fetchAlbumsByUserId(action) {
   }
 }
 
+function * fetchAlbumsPhotos(action) {
+  try {
+    const { albumId } = action.fields;
+    let response = yield call(JSONPlaceholder.getPhotosByAlbumId, albumId);
+    yield put({ type: ACTION_TYPES.ALBUM_PHOTOS_FETCH_SUCCEEDED, photos: response, albumId });
+  } catch (e) {
+    yield put({ type: ACTION_TYPES.ALBUM_PHOTOS_FETCH_FAILED, message: e.message });
+  }
+}
+
 function * rootSaga() {
   yield takeLatest(ACTION_TYPES.USERS_FETCH_REQUESTED, fetchUsers);
   yield takeLatest(ACTION_TYPES.USER_FETCH_REQUESTED, fetchUser);
   yield takeLatest(ACTION_TYPES.USER_FETCH_REQUESTED, fetchAlbumsByUserId);
+  yield takeLatest(ACTION_TYPES.ALBUM_PHOTOS_FETCH_REQUESTED, fetchAlbumsPhotos);
 }
 
 export default rootSaga;
