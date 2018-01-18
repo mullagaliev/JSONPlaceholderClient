@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import UsersList from './components/UsersList';
+import UserPage from './components/UserPage';
 import 'semantic-ui-css/semantic.min.css';
 
 const styles = require('./App.sass');
@@ -19,6 +20,7 @@ class App extends Component {
         </p>
         <div>
           <UsersList/>
+          <UserPage/>
         </div>
       </div>
     );
