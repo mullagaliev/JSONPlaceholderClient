@@ -5,6 +5,7 @@ import DefaultAvatar from '../../static/defaultAvatar.jpg';
 
 class UsersList extends Component {
   render() {
+    const { items } = this.props;
     return (<Table striped>
       <Table.Header>
         <Table.Row>
@@ -15,106 +16,30 @@ class UsersList extends Component {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        <Table.Row>
-          <Table.Cell>
-            <Header as='h4' image>
-              <Image src={DefaultAvatar} rounded size='mini'/>
-              <Header.Content>
-                Leanne Graham
-                <Header.Subheader>@Bret</Header.Subheader>
-              </Header.Content>
-            </Header>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="/user/1">@Bret</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="http://www.hildegard.org" target="_blank">hildegard.org</a>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Header as='h4' image>
-              <Image src={DefaultAvatar} rounded size='mini'/>
-              <Header.Content>
-                Leanne Graham
-                <Header.Subheader>@Bret</Header.Subheader>
-              </Header.Content>
-            </Header>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="#">@Bret</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="http://www.hildegard.org" target="_blank">hildegard.org</a>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Header as='h4' image>
-              <Image src={DefaultAvatar} rounded size='mini'/>
-              <Header.Content>
-                Leanne Graham
-                <Header.Subheader>@Bret</Header.Subheader>
-              </Header.Content>
-            </Header>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="#">@Bret</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="http://www.hildegard.org" target="_blank">hildegard.org</a>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Header as='h4' image>
-              <Image src={DefaultAvatar} rounded size='mini'/>
-              <Header.Content>
-                Leanne Graham
-                <Header.Subheader>@Bret</Header.Subheader>
-              </Header.Content>
-            </Header>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="#">@Bret</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="http://www.hildegard.org" target="_blank">hildegard.org</a>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Header as='h4' image>
-              <Image src={DefaultAvatar} rounded size='mini'/>
-              <Header.Content>
-                Leanne Graham
-                <Header.Subheader>@Bret</Header.Subheader>
-              </Header.Content>
-            </Header>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="#">@Bret</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-          </Table.Cell>
-          <Table.Cell>
-            <a href="http://www.hildegard.org" target="_blank">hildegard.org</a>
-          </Table.Cell>
-        </Table.Row>
+        {
+          items.length ? items.map((item) => {
+            return (<Table.Row key={item.id}>
+              <Table.Cell>
+                <Header as='h4' image>
+                  <Image src={DefaultAvatar} rounded size='mini'/>
+                  <Header.Content>
+                    {item.name}
+                    <Header.Subheader>@{item.username}</Header.Subheader>
+                  </Header.Content>
+                </Header>
+              </Table.Cell>
+              <Table.Cell>
+                <a href={'/user/' + item.id}>@{item.username}</a>
+              </Table.Cell>
+              <Table.Cell>
+                <a href='mailto:Sincere@april.biz'>{item.email}</a>
+              </Table.Cell>
+              <Table.Cell>
+                <a href={'http://www.' + item.website} target='_blank'>{item.website}</a>
+              </Table.Cell>
+            </Table.Row>);
+          }) : null
+        }
       </Table.Body>
     </Table>);
   }

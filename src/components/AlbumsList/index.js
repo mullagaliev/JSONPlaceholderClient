@@ -5,34 +5,20 @@ import defaultAlbum from '../../static/defaultAlbum.png';
 
 class AlbumsList extends Component {
   render() {
-    return (
-        <Card.Group itemsPerRow={4}>
-          <Card color='red' as='a' href='/album/1'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
+    const { items } = this.props;
+    return (<Card.Group itemsPerRow={4}>
+      {
+        items.length ? items.map((item) => {
+          return <Card key={item.id}
+                       color='red'
+                       as='a'
+                       href={'/album/' + item.id}>
+            <Image src={defaultAlbum}/>
+            <Card.Header textAlign='center'>{item.title}</Card.Header>
           </Card>
-          <Card color='red' as='a' href='#'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='red' as='a' href='#'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='red' as='a' href='#'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='red' as='a' href='#'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='red' as='a' href='#'>
-            <Image src={defaultAlbum} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-        </Card.Group>
-    );
+        }) : null
+      }
+    </Card.Group>);
   }
 }
 

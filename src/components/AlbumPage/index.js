@@ -5,34 +5,18 @@ import defaultPhotos from '../../static/defaultAlbum.png';
 
 class AlbumPage extends Component {
   render() {
-    return (
-        <Card.Group itemsPerRow={3}>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-          <Card color='orange' as='a' href='#'>
-            <Image src={defaultPhotos} />
-            <Card.Header textAlign='center'>Matthew Harris</Card.Header>
-          </Card>
-        </Card.Group>
-    );
+    const { items } = this.props;
+    return (<Card.Group itemsPerRow={3}>
+      {
+        items.length ? items.map((item) => {
+          return <Card key={item.id}
+                       color='orange'>
+            <Image src={item.url ? item.url : defaultPhotos}/>
+            <Card.Header textAlign='center'>{item.title}</Card.Header>
+          </Card>;
+        }) : null
+      }
+    </Card.Group>);
   }
 }
 
