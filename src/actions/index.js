@@ -8,3 +8,8 @@ export const getUsers = (filter = {}, sort = {}) => action(ACTION_TYPES.USERS_FE
   filter,
   sort,
 });
+
+export const getUserById = (userId = 1) => action(ACTION_TYPES.USER_FETCH_REQUESTED, {
+  userId,
+});
+

@@ -5,29 +5,9 @@ import DefaultAvatar from '../../static/defaultAvatar.jpg';
 
 class UserProfile extends Component {
   render() {
-    const user = {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874",
-        "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
-        }
-      },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": {
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
-      }
-    };
+    const { user } = this.props;
+    if(!user.id)
+      return null;
     return (<Card>
       <Image src={user.avatar ? user.avatar : DefaultAvatar}/>
       <Card.Content>
@@ -90,7 +70,7 @@ class UserProfile extends Component {
       <Card.Content extra>
         <a>
           <Icon name='picture'/>
-          22 albums
+          ?? albums
         </a>
       </Card.Content>
     </Card>);

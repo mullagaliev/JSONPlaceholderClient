@@ -6,10 +6,11 @@ import AlbumsList from '../AlbumsList';
 
 class UserPage extends Component {
   render() {
+    const { user } = this.props;
     return (
         <Grid>
           <Grid.Column width={4}>
-            <UserProfile/>
+            <UserProfile user={user} />
           </Grid.Column>
           <Grid.Column width={9}>
             <AlbumsList/>
