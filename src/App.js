@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import UsersList from './components/UsersList';
+import 'semantic-ui-css/semantic.min.css';
 
 const styles = require('./App.sass');
 
@@ -15,6 +17,9 @@ class App extends Component {
         <p className={styles.AppIntro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+          <UsersList/>
+        </div>
       </div>
     );
   }
