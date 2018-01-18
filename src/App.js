@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import UsersList from './components/UsersList';
-import UserProfle from './components/UserProfle';
+import UserPage from './components/UserPage';
 import 'semantic-ui-css/semantic.min.css';
 
 const styles = require('./App.sass');
@@ -20,7 +20,7 @@ class App extends Component {
         </p>
         <div>
           <UsersList/>
-          <UserProfle/>
+          <UserPage/>
         </div>
       </div>
     );
