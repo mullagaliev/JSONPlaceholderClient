@@ -8,8 +8,8 @@ class UserProfile extends Component {
     const { user } = this.props;
     if(!user.id)
       return null;
-    return (<Card>
-      <Image src={user.avatar ? user.avatar : DefaultAvatar}/>
+    return (<Card style={{width: '100%'}}>
+      <Image fluid src={user.avatar ? user.avatar : DefaultAvatar}/>
       <Card.Content>
         <Card.Header>
           {user.name}

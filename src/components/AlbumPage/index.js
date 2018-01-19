@@ -6,7 +6,7 @@ import defaultPhotos from '../../static/defaultAlbum.png';
 class AlbumPage extends Component {
   render() {
     const { items } = this.props;
-    return (<Card.Group itemsPerRow={3}>
+    return (<Card.Group itemsPerRow={3} stackable>
       {
         items.length ? items.map((item) => {
           return <Card key={item.id}
