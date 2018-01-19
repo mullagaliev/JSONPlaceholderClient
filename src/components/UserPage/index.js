@@ -8,14 +8,14 @@ class UserPage extends Component {
   render() {
     const { user, albums } = this.props;
     return (
-        <Grid>
-          <Grid.Column width={4}>
+        <Grid centered>
+          <Grid.Column mobile={16} tablet={6} computer={4}>
             <UserProfile user={user}/>
           </Grid.Column>
-          <Grid.Column width={9}>
+          <Grid.Column mobile={16} tablet={10} computer={9}>
             <AlbumsList items={albums}/>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column computer={3}>
           </Grid.Column>
         </Grid>
     );
