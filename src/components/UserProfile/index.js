@@ -6,7 +6,7 @@ import DefaultAvatar from '../../static/defaultAvatar.jpg';
 class UserProfile extends Component {
   render() {
     const { user } = this.props;
-    if(!user.id)
+    if (!user.id)
       return null;
     return (<Card>
       <Image src={user.avatar ? user.avatar : DefaultAvatar}/>
@@ -17,21 +17,21 @@ class UserProfile extends Component {
         <Card.Meta>
           <span className='username'>
             <b>Username: </b>
-            <a href="#">
-              {`@${user.username}`}
+            <a href={'/user/' + user.id}>
+              {user.username}
             </a>
           </span>
           <br/>
           <span className='email'>
             <b>Email: </b>
-            <a href="#">
+            <a href={'mailto:' + user.email}>
               {user.email}
             </a>
           </span>
           <br/>
           <span className='phone'>
             <b>Phone: </b>
-            <a href="#">
+            <a href={'tel:' + user.phone}>
               {user.phone}
             </a>
           </span>
@@ -59,7 +59,9 @@ class UserProfile extends Component {
           <h2>Other</h2>
           <div>
             <b>Website: </b>
-            <a href="">{user.website}</a>
+            <a href={'http://www.' + user.website} target='_blank'>
+              {user.website}
+            </a>
             <br/>
             <b>Company: </b>
             {user.company.name}
@@ -70,7 +72,7 @@ class UserProfile extends Component {
       <Card.Content extra>
         <a>
           <Icon name='picture'/>
-          ?? albums
+           albums
         </a>
       </Card.Content>
     </Card>);
