@@ -5,10 +5,23 @@ import { connect } from 'react-redux';
 import { getUserById, getAlbumsByUserId } from '../../actions';
 
 class ContainerUserPage extends Component {
-  componentDidMount() {
-    const { userId } = this.props;
+  Update(userId) {
     this.props.dispatch(getUserById(userId));
     this.props.dispatch(getAlbumsByUserId(userId));
+  }
+
+  componentDidMount() {
+    const { userId } = this.props;
+    this.Update(userId);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const { userId } = nextProps;
+    if (userId === this.props.userId) {
+      return true;
+    }
+    this.Update(userId);
+    return true;
   }
 
   render() {
