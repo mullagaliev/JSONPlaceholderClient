@@ -11,7 +11,7 @@ class AlbumPage extends Component {
         items.length ? items.map((item) => {
           return <Card key={item.id}
                        color='orange'>
-            <Image src={item.url ? item.url : defaultPhotos}/>
+            <Image fluid src={item.url ? item.url : defaultPhotos}/>
             <Card.Header textAlign='center'>{item.title}</Card.Header>
           </Card>;
         }) : null
