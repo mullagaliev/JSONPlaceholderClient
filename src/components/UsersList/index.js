@@ -4,6 +4,10 @@ import { Header, Image, Table } from 'semantic-ui-react'
 import DefaultAvatar from '../../static/defaultAvatar.jpg';
 
 class UsersList extends Component {
+  GoToUser(userId) {
+    window.location.pathname = '/user/' + userId;
+  }
+
   render() {
     const { items } = this.props;
     return (<Table striped>
@@ -18,7 +22,9 @@ class UsersList extends Component {
       <Table.Body>
         {
           items.length ? items.map((item) => {
-            return (<Table.Row key={item.id}>
+            return (<Table.Row key={item.id}
+                               style={{cursor: 'pointer'}}
+                               onClick={() => this.GoToUser(item.id)}>
               <Table.Cell>
                 <Header as='h4' image>
                   <Image src={DefaultAvatar} rounded size='mini'/>
