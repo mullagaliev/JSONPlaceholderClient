@@ -13,6 +13,11 @@ body {
   overflow: hidden;
 }
 
+.BlockTitle{
+  color: white;
+  font-weight: 100;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
 }
