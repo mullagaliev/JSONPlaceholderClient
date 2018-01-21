@@ -1,0 +1,25 @@
+.AlbumsList
+  background-image: linear-gradient(top, #262f3b 0%, #202831 100%)
+  padding: 60px
+
+.AlbumsListGallery
+  display: flex
+  flex-flow: row wrap
+
+.AlbumsListGalleryElem
+  flex: auto
+  width: calc(570px / 3)
+  margin: 10px
+  &:hover > .AlbumsListGalleryElemPreview
+    border-radius: 50px
+  &:hover > .AlbumsListGalleryElemTitle
+    font-weight: bold
+
+.AlbumsListGalleryElemPreview
+  width: 100%
+  height: auto
+  transition: 0.5s
+
+.AlbumsListGalleryElemTitle
+  color: white
+  text-transform: uppercase

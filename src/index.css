@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
 body {
   margin: 0;
   padding: 0;
@@ -5,5 +7,17 @@ body {
 }
 
 #root{
-  padding: 10px;
+  background-color: #161b22;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.BlockTitle{
+  color: white;
+  font-weight: 100;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
 }
