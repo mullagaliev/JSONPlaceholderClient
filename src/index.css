@@ -6,6 +6,13 @@ body {
   font-family: sans-serif;
 }
 
+#root{
+  background-color: #161b22;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
 }
