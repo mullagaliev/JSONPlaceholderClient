@@ -1,81 +1,70 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Icon, Image } from 'semantic-ui-react'
 import DefaultAvatar from '../../static/defaultAvatar.jpg';
+import MarkerIcon from '../common/icons/Marker';
+import PhoneIcon from '../common/icons/Phone';
+import ChatIcon from '../common/icons/Chat';
+import WebIcon from '../common/icons/Web';
+
+const style = require('./UserProfile.sass');
 
 class UserProfile extends Component {
+
   render() {
     const { user } = this.props;
     if (!user.id)
       return null;
-    return (<Card style={{width: 'calc(100% - 10px)', margin: '0 auto'}}>
-      <Image fluid src={user.avatar ? user.avatar : DefaultAvatar}/>
-      <Card.Content>
-        <Card.Header>
-          {user.name}
-        </Card.Header>
-        <Card.Meta>
-          <span className='username'>
-            <b>Username: </b>
-            <a href={'/user/' + user.id}>
-              {user.username}
-            </a>
+    return (<div className={style.UserProfile}>
+      <div className={style.PrimaryInfo}>
+        <div className={style.PrimaryInfoAvatar}>
+          <img src={user.image ? user.image : DefaultAvatar} alt=""/>
+        </div>
+        <div className={style.PrimaryInfoDesc}>
+          <span className={style.PrimaryInfoDescMeta}>
+            Username <a href={'/user/' + user.id}
+                        className={style.PrimaryInfoDescMetaPrimary}>@{user.username}</a>
           </span>
-          <br/>
-          <span className='email'>
-            <b>Email: </b>
-            <a href={'mailto:' + user.email}>
-              {user.email}
-            </a>
+          <h1 className={style.PrimaryInfoDescTitle}>
+            {user.name}
+          </h1>
+          <span className={style.PrimaryInfoDescExtra}>
+            {user.company.name}, {user.company.bs}
           </span>
-          <br/>
-          <span className='phone'>
-            <b>Phone: </b>
-            <a href={'tel:' + user.phone}>
-              {user.phone}
-            </a>
-          </span>
-        </Card.Meta>
-        <Card.Description>
-          <h2>Address</h2>
-          <address>
-            <b>City: </b>
+        </div>
+        <div className={style.PrimaryInfoRating}>
+
+        </div>
+      </div>
+      <div className={style.AdditionalInfo}>
+        <div className={style.AdditionalInfoElem}>
+          <MarkerIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
+          <span className={style.AdditionalInfoElemTitle}>
             {user.address.city}
             <br/>
-            <b>Street: </b>
-            {user.address.street}
-            <br/>
-            <b>Suite: </b>
-            {user.address.suite}
-            <br/>
-            <b>Zipcode: </b>
-            {user.address.zipcode}
-            <br/>
-            <b>Geo: </b>
-            {user.address.geo.lat}
-            <span> : </span>
-            {user.address.geo.lng}
-          </address>
-          <h2>Other</h2>
-          <div>
-            <b>Website: </b>
-            <a href={'http://www.' + user.website} target='_blank'>
-              {user.website}
-            </a>
-            <br/>
-            <b>Company: </b>
-            {user.company.name}
-            <br/>
-          </div>
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a>
-          <Icon name='picture'/>
-           albums
-        </a>
-      </Card.Content>
-    </Card>);
+            {user.address.street} {user.address.suite}
+          </span>
+        </div>
+        <div className={style.AdditionalInfoElem}>
+          <PhoneIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
+          <a href={'tel:' + user.phone} className={style.AdditionalInfoElemTitle}>
+            {user.phone}
+          </a>
+        </div>
+        <div className={style.AdditionalInfoElem}>
+          <ChatIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
+          <a href={'mailto:' + user.email} className={style.AdditionalInfoElemTitle}>
+            Send an email
+          </a>
+        </div>
+        <div className={style.AdditionalInfoElem}>
+          <WebIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
+          <a href={'http://www.' + user.website} target='_blank'
+             className={style.AdditionalInfoElemTitle}>
+            www.{user.website}
+          </a>
+        </div>
+      </div>
+    </div>)
   }
 }
 

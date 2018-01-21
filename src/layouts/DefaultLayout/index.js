@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import Menu from '../../components/Menu';
 import { Container } from 'semantic-ui-react';
 
+const style = require('./DefaultLayout.sass');
+
 class DefaultLayout extends Component {
   render() {
     const { header, children, footer } = this.props;
     return <div>
-      { header ? header : <Menu/> }
-      <div style={{ marginTop: '70px', marginBottom: '20px' }}>
-        <Container>
+      {/*{ header ? header : <Menu/> }*/}
+      <div className={style.Content}>
+        <div className={style.Container}>
           { children }
-        </Container>
+        </div>
       </div>
       { footer ? footer : null }
     </div>;

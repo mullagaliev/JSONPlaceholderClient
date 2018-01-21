@@ -1,0 +1,76 @@
+.UserProfile
+  background-color: #12161c
+  margin-bottom: 8px
+
+
+/** PRIMARY INFO **/
+
+.PrimaryInfo
+  background-image: linear-gradient(top, #262f3b 0%, #202831 100%)
+  padding: 25px 25px
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+
+.PrimaryInfoAvatar
+  width: 150px
+  height: 150px
+  background-color: white
+  overflow: hidden
+  img
+    object-fit: scale-down
+    object-position: 50% 50%
+    height: 150px
+
+.PrimaryInfoDesc
+  width: 450px
+  padding: 20px 30px
+  color: white
+
+.PrimaryInfoDescMeta
+  text-transform: uppercase
+  color: #6e7a88
+  font-weight: 100
+
+.PrimaryInfoDescMetaPrimary
+  color: white
+
+.PrimaryInfoDescTitle
+  font-weight: 100
+
+.PrimaryInfoDescExtra
+  text-transform: uppercase
+  font-weight: 100
+
+.PrimaryInfoRating
+  width: calc(100% - 150px - 450px)
+  background-color: white
+
+
+/** ADDITIONAL INFO **/
+
+.AdditionalInfo
+  padding: 35px 30px
+  background-color: #262f3b
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+
+$countAdditionalInfoElem: 4
+.AdditionalInfoElem
+  height: 60px
+  width: calc((100% / #{$countAdditionalInfoElem}) - 20px)
+  display: flex
+
+.AdditionalInfoElemIcon
+  display: block
+  min-width: 50px
+  width: 50px
+  height: 100%
+  align-self: center
+  padding-right: 10px
+
+.AdditionalInfoElemTitle
+  color: #c5d1de
+  font-size: 14px
+  align-self: center
