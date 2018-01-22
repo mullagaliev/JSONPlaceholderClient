@@ -5,8 +5,8 @@ import PhotoGallery from '../PhotoGallery';
 
 class AlbumPage extends Component {
   render() {
-    const { items } = this.props;
-    return (<ContentBlock primary={true} title={'Album Name'}>
+    const { items, albumId } = this.props;
+    return (<ContentBlock primary={true} title={'Album # ' + albumId}>
       <PhotoGallery items={items}/>
     </ContentBlock>);
   }
