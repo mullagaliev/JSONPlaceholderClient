@@ -20,7 +20,8 @@ class PhotoGalleryElem extends Component {
         break;
       default:
         return (
-            <div className={style.PhotoGalleryElem}>
+            <div className={style.PhotoGalleryElem}
+                 {...this.props}>
               <img src={item.url ? item.url : defaultPhotos}
                    className={style.PhotoGalleryElemPreview}/>
               <span className={style.PhotoGalleryElemTitle}>{item.title}</span>
