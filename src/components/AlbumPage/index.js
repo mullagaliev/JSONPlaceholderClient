@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Image } from 'semantic-ui-react';
-import defaultPhotos from '../../static/defaultAlbum.png';
+import PhotoGallery from '../PhotoGallery';
 
 class AlbumPage extends Component {
   render() {
     const { items } = this.props;
-    return (<Card.Group itemsPerRow={3} stackable style={{paddingTop: '5px'}}>
-      {
-        items.length ? items.map((item) => {
-          return <Card key={item.id}
-                       color='orange'>
-            <Image fluid src={item.url ? item.url : defaultPhotos}/>
-            <Card.Header textAlign='center'>{item.title}</Card.Header>
-          </Card>;
-        }) : null
-      }
-    </Card.Group>);
+    return (<div className="Block">
+      <h1 className="BlockTitle" style={{ textAlign: 'center' }}>Album Name</h1>
+      <PhotoGallery items={items}/>
+    </div>);
   }
 }
 
