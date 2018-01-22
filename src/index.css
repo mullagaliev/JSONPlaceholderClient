@@ -18,6 +18,14 @@ body {
   font-weight: 100;
 }
 
+.Block{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#262f3b), to(#202831));
+  background-image: -webkit-linear-gradient(top, #262f3b 0%, #202831 100%);
+  background-image: -o-linear-gradient(top, #262f3b 0%, #202831 100%);
+  background-image: linear-gradient(top, #262f3b 0%, #202831 100%);
+  padding: 60px;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
 }
