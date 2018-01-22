@@ -15,11 +15,11 @@ class PhoneLink extends Component {
 
     let formatted_number;
 
-    if (number.length == 8) {
+    if (number.length === 8) {
       formatted_number = _number.replace(/([0-9]{2})([0-9]{3})([0-9]{3})/, "$1 $2 $3");
-    } else if (number.length == 10) {
+    } else if (number.length === 10) {
       formatted_number = _number.replace(/([0-9]{4})([0-9]{3})([0-9]{3})/, "$1 $2 $3");
-    } else if (number.indexOf('+') == 0) {
+    } else if (number.indexOf('+') === 0) {
       formatted_number = _number.replace(/([0-9]{2})([0-9]{3})([0-9]{3})([0-9]{3})/, "$1 $2 $3 $4");
     }
     else {
