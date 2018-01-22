@@ -5,6 +5,7 @@ import MarkerIcon from '../common/icons/Marker';
 import PhoneIcon from '../common/icons/Phone';
 import ChatIcon from '../common/icons/Chat';
 import WebIcon from '../common/icons/Web';
+import PhoneNumber from '../common/PhoneLink';
 
 const style = require('./UserProfile.sass');
 
@@ -46,9 +47,9 @@ class UserProfile extends Component {
         </div>
         <div className={style.AdditionalInfoElem}>
           <PhoneIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
-          <a href={'tel:' + user.phone} className={style.AdditionalInfoElemTitle}>
-            {user.phone}
-          </a>
+          <PhoneNumber number={user.phone}
+                       className={style.AdditionalInfoElemTitle}
+                       isLinked={true}/>
         </div>
         <div className={style.AdditionalInfoElem}>
           <ChatIcon className={style.AdditionalInfoElemIcon} width={'40px'} height={'40px'}/>
