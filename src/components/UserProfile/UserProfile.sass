@@ -1,7 +1,8 @@
+@import "../../style/helpers/import"
+
 .UserProfile
   background-color: #12161c
   margin-bottom: 8px
-
 
 /** PRIMARY INFO **/
 
@@ -46,7 +47,6 @@
   width: calc(100% - 150px - 450px)
   background-color: white
 
-
 /** ADDITIONAL INFO **/
 
 .AdditionalInfo
@@ -55,11 +55,21 @@
   display: flex
   flex-wrap: nowrap
   justify-content: space-between
+  +rt
+    padding: 15px 10px
+    flex-wrap: wrap
+    justify-content: center
+  +rm
+    padding: 15px 40px
 
 $countAdditionalInfoElem: 4
 .AdditionalInfoElem
   height: 60px
   width: calc((100% / #{$countAdditionalInfoElem}) - 20px)
+  +rt
+    width: calc((100% / 2) - 100px)
+  +rm
+    width: 100%
   display: flex
 
 .AdditionalInfoElemIcon

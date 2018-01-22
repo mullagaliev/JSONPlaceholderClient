@@ -1,0 +1,30 @@
+=r($point)
+  @if $point == desktop
+    @media only screen and (min-width: 1200px)
+      @content
+  @else if $point == laptop
+    @media only screen and (max-width: 1199px) // and (min-width: 992px)
+      @content
+  @else if $point == tablet
+    @media only screen and (max-width: 991px) //and (min-width: 768px)
+      @content
+  @else if $point == mobile
+    @media only screen and (max-width: 767px)
+      @content
+
+/* alias for breakpoint */
+=rm
+  +r(mobile)
+    @content
+
+=rt
+  +r(tablet)
+    @content
+
+=rl
+  +r(laptop)
+    @content
+
+=rd
+  +r(desktop)
+    @content
