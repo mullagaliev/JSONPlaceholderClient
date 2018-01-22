@@ -21,9 +21,10 @@
   tbody > tr:hover
     background-color: #d92f66 !important
   a
-    color: #e1eaf6
-    &:hover
-      color: white
+    &:link, &:visited
+      color: #e1eaf6 !important
+    &:hover, &:active
+      color: white !important
 
 @media only screen and (max-width: 800px)
   .Table tr, td, th

@@ -17,6 +17,26 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* unvisited link */
+a:link {
+    color: #c5d1de !important;
+}
+
+/* visited link */
+a:visited {
+    color: #c5d1de !important;
+}
+
+/* mouse over link */
+a:hover {
+    color: #d92f66 !important;
+}
+
+/* selected link */
+a:active {
+    color: #f92168 !important;
+}
+
 .ExternalLink {
     position: relative;
 }

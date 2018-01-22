@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import defaultPhotos from '../../static/defaultAlbum.png';
+import classnames from 'classnames';
 
 const style = require('./PhotoGallery.sass');
 
@@ -10,7 +11,7 @@ class PhotoGalleryElem extends Component {
     // with link
     switch (as) {
       case 'a':
-        return (<a className={style.PhotoGalleryElem}
+        return (<a className={classnames(style.PhotoGalleryElem, style.PhotoGalleryElemLink)}
                    {...this.props}>
           <img src={item.url ? item.url : defaultPhotos}
                className={style.PhotoGalleryElemPreview}/>
