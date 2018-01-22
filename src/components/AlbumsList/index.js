@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ContentBlock from '../ContentBlock';
 import PhotoGallery from '../PhotoGallery';
 
 class AlbumsList extends Component {
@@ -8,10 +9,9 @@ class AlbumsList extends Component {
     if (!Boolean(items.length)) {
       return null;
     }
-    return (<div className='Block'>
-      <h2 className="BlockTitle" style={{ marginLeft: '10px' }}>User's albums</h2>
+    return (<ContentBlock title={'User\'s albums'}>
       <PhotoGallery elemLinkPattern={'/album/'} items={items}/>
-    </div>);
+    </ContentBlock>);
   }
 }
 
