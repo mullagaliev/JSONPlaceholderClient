@@ -27,7 +27,8 @@ class UsersList extends Component {
         <tbody>
         {
           items.length ? items.map((item) => {
-            return (<tr style={{ cursor: 'pointer' }}
+            return (<tr key={item.id}
+                        style={{ cursor: 'pointer' }}
                         onClick={() => this.GoToUser(item.id)}>
               <td>
                 <div className={style.UserProfile}>
@@ -48,10 +49,11 @@ class UsersList extends Component {
                 <a href={'/user/' + item.id}>@{item.username}</a>
               </td>
               <td>
-                <a href='mailto:Sincere@april.biz'>{item.email}</a>
+                <a className='ExternalLink' href='mailto:Sincere@april.biz'>{item.email}</a>
               </td>
               <td>
-                <a href={'http://www.' + item.website} target='_blank'>{'www.' + item.website}</a>
+                <a className='ExternalLink' href={'http://www.' + item.website}
+                   target='_blank'>{'www.' + item.website}</a>
               </td>
             </tr>);
           }) : null
