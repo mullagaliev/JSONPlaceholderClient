@@ -1,0 +1,28 @@
+.Table
+  width: 100%
+  background: #4f6075
+  margin: 10px 0
+  box-shadow: none
+  text-align: left
+  color: #e1eaf6
+  border-collapse: separate
+  border-spacing: 0
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  thead > tr
+    background-color: #405063
+    th, td
+      font-weight: 700
+  th, td
+    padding: 10px 20px
+    border: 1px solid rgba(46, 53, 62, 0.5)
+  tr:nth-child(2n)
+    background-color: #405063
+
+@media only screen and (max-width: 800px)
+  .Table tr, td, th
+    display: block !important
+    width: auto !important
+    border: none !important
+  .Table tr
+    border: 1px solid rgba(46, 53, 62, 0.5) !important
