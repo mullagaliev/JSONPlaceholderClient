@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Image } from 'semantic-ui-react'
 import DefaultAvatar from '../../static/defaultAvatar.jpg';
 import ContentBlock from '../ContentBlock';
 import Table from '../common/Table';

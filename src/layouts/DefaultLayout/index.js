@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Menu from '../../components/Menu';
-import { Container } from 'semantic-ui-react';
 
 const style = require('./DefaultLayout.sass');
 
