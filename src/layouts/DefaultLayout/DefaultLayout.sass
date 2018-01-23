@@ -32,11 +32,17 @@
     margin-left: auto !important
     margin-right: auto !important
 
-.Content
+.HeaderZone
+  height: 55px
+  border-bottom: 2px solid rgb(218, 47, 101)
+
+.ContentZone
   margin: 0
-  padding: 10px 0 200px
-  height: 100vh
+  height: calc(100vh - 55px)
   overflow-x: hidden
-  overflow-y: auto
+  overflow-y: hidden
+
+.Content
+  padding: 10px 0 200px
   +rt
-    padding-bottom: 10px
+    padding: 0

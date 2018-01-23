@@ -4,6 +4,7 @@ import ContainerUserPage from './containers/UserPage';
 import ContainerAlbumPage from './containers/AlbumPage';
 import Layout from './layouts/DefaultLayout';
 import 'semantic-ui-css/semantic.min.css';
+import './index.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {

@@ -19,22 +19,22 @@ body {
 
 /* unvisited link */
 a:link {
-    color: #c5d1de !important;
+    color: #c5d1de;
 }
 
 /* visited link */
 a:visited {
-    color: #c5d1de !important;
+    color: #c5d1de;
 }
 
 /* mouse over link */
 a:hover {
-    color: #d92f66 !important;
+    color: #d92f66;
 }
 
 /* selected link */
 a:active {
-    color: #f92168 !important;
+    color: #f92168;
 }
 
 .ExternalLink {
