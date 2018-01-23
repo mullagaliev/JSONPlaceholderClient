@@ -1,0 +1,48 @@
+@import "../../style/helpers/import"
+
+.Container
+  display: block
+  max-width: 100% !important
+
+/* Mobile
++rm
+  .Container
+    width: auto !important
+    margin-left: 1em !important
+    margin-right: 1em !important
+
+/* Tablet
++rt
+  .Container
+    width: 723px
+    margin-left: auto !important
+    margin-right: auto !important
+
+/* Laptop
++rl
+  .Container
+    width: 933px
+    margin-left: auto !important
+    margin-right: auto !important
+
+/* Desktop
++rd
+  .Container
+    width: 1127px
+    margin-left: auto !important
+    margin-right: auto !important
+
+.HeaderZone
+  height: 55px
+  border-bottom: 2px solid rgb(218, 47, 101)
+
+.ContentZone
+  margin: 0
+  height: calc(100vh - 55px)
+  overflow-x: hidden
+  overflow-y: hidden
+
+.Content
+  padding: 10px 0 200px
+  +rt
+    padding: 0

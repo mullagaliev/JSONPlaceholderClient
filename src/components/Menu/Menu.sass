@@ -1,0 +1,21 @@
+@import "../../style/helpers/import"
+
+.Menu
+  height: 100%
+  display: flex
+  & > *
+    align-self: center
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
+  +rt
+    padding: 10px
+
+.MenuItem
+  padding: 10px
+
+.MenuItemActive
+  background-color: #d92f66
+  color: white
+  &:hover
+    color: white

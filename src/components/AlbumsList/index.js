@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Image } from 'semantic-ui-react';
-import defaultAlbum from '../../static/defaultAlbum.png';
+import ContentBlock from '../ContentBlock';
+import PhotoGallery from '../PhotoGallery';
 
 class AlbumsList extends Component {
   render() {
     const { items } = this.props;
-    return (<Card.Group itemsPerRow={4} stackable>
-      {
-        items.length ? items.map((item) => {
-          return <Card key={item.id}
-                       color='red'
-                       as='a'
-                       href={'/album/' + item.id}>
-            <Image src={defaultAlbum}/>
-            <Card.Header textAlign='center'>{item.title}</Card.Header>
-          </Card>
-        }) : null
-      }
-    </Card.Group>);
+    if (!Boolean(items.length)) {
+      return null;
+    }
+    return (<ContentBlock title={'User\'s albums'}>
+      <PhotoGallery elemLinkPattern={'/album/'} items={items}/>
+    </ContentBlock>);
   }
 }
 

@@ -1,0 +1,109 @@
+@import "../../style/helpers/import"
+
+.UserProfile
+  background-color: #12161c
+  margin-bottom: 8px
+
+/** PRIMARY INFO **/
+
+.PrimaryInfo
+  background-image: linear-gradient(top, #262f3b 0%, #202831 100%)
+  padding: 25px 25px
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  +rt
+    flex-wrap: wrap
+    padding: 0
+
+.PrimaryInfoAvatar
+  width: 150px
+  height: 150px
+  overflow: hidden
+  img
+    object-fit: cover
+    object-position: 50% 50%
+    height: 150px
+    +rt
+      width: 100%
+      height: 100%
+  +rt
+    width: 100%
+    height: auto
+    max-height: 300px
+
+.PrimaryInfoDesc
+  width: 450px
+  padding: 20px 30px
+  color: white
+  +rt
+    width: 50%
+    padding: 20px
+    h1
+      margin: 10px 0
+  +rm
+    width: 100%
+
+.PrimaryInfoDescMeta
+  text-transform: uppercase
+  color: #6e7a88
+  font-weight: 100
+
+.PrimaryInfoDescMetaPrimary
+  color: white
+
+.PrimaryInfoDescTitle
+  font-weight: 100
+
+.PrimaryInfoDescExtra
+  text-transform: uppercase
+  font-weight: 100
+
+.PrimaryInfoRating
+  width: calc(100% - 150px - 450px)
+  background-color: white
+  +rt
+    width: 50%
+  +rm
+    display: none
+
+/** ADDITIONAL INFO **/
+
+.AdditionalInfo
+  padding: 35px 30px
+  background-color: #262f3b
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  +rt
+    padding: 15px 10px
+    flex-wrap: wrap
+    justify-content: space-around
+  +rm
+    padding: 15px 20px
+
+$countAdditionalInfoElem: 4
+.AdditionalInfoElem
+  height: 60px
+  width: calc((100% / #{$countAdditionalInfoElem}) - 20px)
+  +rt
+    width: calc((100% / 2) - 100px)
+  +rm
+    width: 100%
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+  display: flex
+
+.AdditionalInfoElemIcon
+  display: block
+  min-width: 50px
+  width: 50px
+  height: 100%
+  align-self: center
+  padding-right: 10px
+
+.AdditionalInfoElemTitle
+  color: #c5d1de
+  font-size: 18px
+  align-self: center

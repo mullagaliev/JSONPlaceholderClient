@@ -11,8 +11,8 @@ class ContainerAlbumPage extends Component {
   }
 
   render() {
-    const { photos } = this.props;
-    return (<AlbumPage items={photos}/>);
+    const { photos, albumId } = this.props;
+    return (<AlbumPage items={photos} albumId={albumId}/>);
   }
 }
 

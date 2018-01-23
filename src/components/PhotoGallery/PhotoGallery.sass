@@ -1,0 +1,32 @@
+.PhotoGallery
+  display: flex
+  flex-flow: row wrap
+
+.PhotoGalleryElem
+  position: relative
+  flex: auto
+  width: calc(570px / 3)
+  margin: 10px
+  transition: 0.33s
+  &:hover
+    cursor: zoom-in
+    background-color: #d92f66
+    padding: 10px
+    & > .PhotoGalleryElemPreview
+      border-radius: 25px
+      font-size: 12px
+    & > .PhotoGalleryElemTitle
+      font-weight: bold
+  &Link
+    &:hover
+      cursor: pointer
+
+.PhotoGalleryElemPreview
+  width: 100%
+  height: auto
+  transition: 0.5s
+  font-size: 14px
+
+.PhotoGalleryElemTitle
+  color: white
+  text-transform: uppercase
