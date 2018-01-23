@@ -78,7 +78,7 @@
   +rt
     padding: 15px 10px
     flex-wrap: wrap
-    justify-content: center
+    justify-content: space-around
   +rm
     padding: 15px 20px
 
@@ -88,6 +88,9 @@ $countAdditionalInfoElem: 4
   width: calc((100% / #{$countAdditionalInfoElem}) - 20px)
   +rt
     width: calc((100% / 2) - 100px)
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
   +rm
     width: 100%
   display: flex
@@ -102,5 +105,5 @@ $countAdditionalInfoElem: 4
 
 .AdditionalInfoElemTitle
   color: #c5d1de
-  font-size: 14px
+  font-size: 18px
   align-self: center
