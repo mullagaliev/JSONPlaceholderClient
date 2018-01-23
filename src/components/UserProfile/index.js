@@ -6,6 +6,7 @@ import PhoneIcon from '../common/icons/Phone';
 import ChatIcon from '../common/icons/Chat';
 import WebIcon from '../common/icons/Web';
 import PhoneNumber from '../common/PhoneLink';
+import GoogleMap from '../common/GoogleMap';
 
 const style = require('./UserProfile.sass');
 
@@ -15,6 +16,10 @@ class UserProfile extends Component {
     const { user } = this.props;
     if (!user.id)
       return null;
+    const geoMarkerLatLng = {
+      lat: Number(user.address.geo.lat),
+      lng: Number(user.address.geo.lng)
+    };
     return (<div className={style.UserProfile}>
       <div className={style.PrimaryInfo}>
         <div className={style.PrimaryInfoAvatar}>
@@ -33,7 +38,10 @@ class UserProfile extends Component {
           </span>
         </div>
         <div className={style.PrimaryInfoRating}>
-
+          <GoogleMap
+              center={geoMarkerLatLng}
+              marker={Object.assign({}, geoMarkerLatLng, { text: user.address.street + ' ' + user.address.suite })}
+              zoom={2}/>
         </div>
       </div>
       <div className={style.AdditionalInfo}>

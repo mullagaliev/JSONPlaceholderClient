@@ -24,7 +24,6 @@ class PhotoGallery extends Component {
     const titles = items.map((item) => {
       return item.title;
     });
-    console.log(titles);
     if (!Boolean(items.length))
       return null;
     return (
