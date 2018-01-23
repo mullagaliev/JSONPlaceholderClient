@@ -1,6 +1,6 @@
 # Решение тестового задание на позицию frontend разработчика в "RBKmoney"
 
-## Текст задания 
+## 1. Текст задания 
 
 Разработать UI клиент для открытого REST API: https://jsonplaceholder.typicode.com
 
@@ -22,22 +22,23 @@
 6. Оцениваются следующие аспекты: 
     - [x] git flow,
     - [x] code style, 
-    - [ ] верстка,
+    - [x] верстка,
     - [x] качество кода,
     - [ ] конфигурация сборки проекта (готовые бандлеры по типу `create-react-app` и т.п не приветствуются);
 
-## Стек технологий 
+## 2. Стек технологий 
 
 1. React
-2. Redux (+ Redux-Saga)
-3. Semantic UI React
+2. Redux
+3. Redux-Saga
+3. Semantic (basic css style)
 
-## Run
+## 3. Run
 
 1. `npm install`
 2. `npm start`
 
-## Результат проверки тестового задания 
+## 4. Результат проверки тестового задания 
 
 ⭐️Alexandra *****, [Jan 19, 2018, 12:37:44 PM]:
 > ...Тестовое задание направлено в основном на выявление способности писать грамотно. 
@@ -47,7 +48,12 @@
 
 > Так что скорее всего нет, увы
 
-## План исправления 
+### 4.1 План исправления 
   
-- [ ] Написать свой конфиг webpack для сборки react проектов
+- [ ] Написать свой конфиг webpack для сборки проектов на React (+ babel ES6)
 - [x] Убрать Semantic UI и сверстать компоненты самостоятельно (branch `develop/version-2`)
+
+## 5. Авторы
+
+* User Profile PSD - [Kálmán Magyari](https://www.uplabs.com/neurofunkx)
+* PhoneLink - [github: @Nathanhoad](https://github.com/nathanhoad/react-phone-number)
