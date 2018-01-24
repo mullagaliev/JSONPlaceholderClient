@@ -7,7 +7,7 @@ const style = require('./ContentBlock.sass');
 class ContentBlock extends Component {
   render() {
     const { primary, title, children } = this.props;
-    return (<div className={classnames(style.Block, primary ? style.BlockPrimary : '')} {...this.props}>
+    return (<div className={classnames(style.Block, primary ? style.BlockPrimary : '')}>
       {
         primary ?
             <h1 className={style.BlockTitle} style={{ textAlign: 'center' }}>
