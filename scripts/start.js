@@ -3,7 +3,6 @@
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
-const fs = require('fs');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
@@ -16,7 +15,7 @@ const config = require('../webpack.config');
 const paths = require('../config/paths');
 
 
-const DEFAULT_PORT = Number(process.env.PORT) || 3000;
+const DEFAULT_PORT = Number(process.env.PORT) || 8000;
 const HOST = (process.env.HOST) || 'localhost';
 
 function runDevServer(host, port) {
