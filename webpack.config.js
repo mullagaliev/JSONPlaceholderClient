@@ -1,10 +1,19 @@
+const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const paths = require('./config/paths');
 
-const paths = {
-  srcPath: path.join(__dirname, 'src'),
-  publicPath: path.join(__dirname, 'public'),
-  bundlePath: path.join(__dirname, 'dist')
+const env = {
+  NODE_ENV: process.env.NODE_ENV || 'development',
+};
+
+const env_stringified = {
+  'process.env': Object.keys(env).reduce((item, key) => {
+    item[key] = JSON.stringify(env[key]);
+    return item;
+  }, {}),
 };
 
 module.exports = {
@@ -18,15 +27,6 @@ module.exports = {
     rules: [{
       oneOf: [
         /* Static */
-        {
-          test: [/\*/],
-          include: paths.publicPath,
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: '/[name].[ext]',
-          },
-        },
         {
           test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
           loader: 'url-loader',
@@ -120,5 +120,13 @@ module.exports = {
         }
       ]
     }]
-  }
+  },
+  plugins: [
+    new InterpolateHtmlPlugin(env),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appHtml,
+    }),
+    new webpack.DefinePlugin(env_stringified),
+  ],
 };
