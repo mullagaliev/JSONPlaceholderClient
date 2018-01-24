@@ -3,7 +3,7 @@ import ContainerUsersList from './containers/UsersList';
 import ContainerUserPage from './containers/UserPage';
 import ContainerAlbumPage from './containers/AlbumPage';
 import Layout from './layouts/DefaultLayout';
-import 'semantic-ui-css/semantic.min.css';
+import './style/global/semantic.css';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
