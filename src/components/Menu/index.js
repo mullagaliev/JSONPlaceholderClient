@@ -23,7 +23,7 @@ class DefaultMenu extends Component {
         Random user
       </NavLink>
       <a className={classnames('ExternalLink')}
-         href='https://github.com/vray1995/JSONPlaceholderClient'
+         href='https://github.com/mullagaliev/JSONPlaceholderClient'
          target='_blank'>
         Github
       </a>
